@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const PronunciationPractice = () => {
-  const [spokenWord, setSpokenWord] = useState("");
+  // const [spokenWord, setSpokenWord] = useState("");
   const [feedback, setFeedback] = useState("");
   const [isListening, setIsListening] = useState(false);
 
-  const targetWord = "cat"; // 🔤 You can make this dynamic later
+  const targetWord = "I am Manish"; // 🔤 You can make this dynamic later
 
   const startListening = () => {
-    if (
-      !("webkitSpeechRecognition" in window || "SpeechRecognition" in window)
-    ) {
-      alert("Sorry, your browser does not support Speech Recognition 😔");
-      return;
-    }
+    // if (
+    //   !("webkitSpeechRecognition" in window || "SpeechRecognition" in window)
+    // ) {
+    //   alert("Sorry, your browser does not support Speech Recognition 😔");
+    //   return;
+    // }
 
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
 
-    recognition.lang = "en-US";
-    recognition.interimResults = false;
-    recognition.continuous = false;
+    // recognition.lang = "en-US";
+    // recognition.interimResults = false;
+    // recognition.continuous = false;
 
     setIsListening(true);
     setFeedback("🎙️ Listening...");
@@ -30,7 +30,7 @@ const PronunciationPractice = () => {
 
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript.toLowerCase().trim();
-      setSpokenWord(transcript);
+      // setSpokenWord(transcript);
       setIsListening(false);
 
       if (transcript === targetWord.toLowerCase()) {
@@ -40,11 +40,11 @@ const PronunciationPractice = () => {
       }
     };
 
-    recognition.onerror = (event) => {
-      console.error("Speech recognition error:", event.error);
-      setFeedback("⚠️ Something went wrong. Please try again.");
-      setIsListening(false);
-    };
+    // recognition.onerror = (event) => {
+    //   console.error("Speech recognition error:", event.error);
+    //   setFeedback("⚠️ Something went wrong. Please try again.");
+    //   setIsListening(false);
+    // };
   };
 
   return (
@@ -67,11 +67,11 @@ const PronunciationPractice = () => {
         {feedback && <p>{feedback}</p>}
       </div>
 
-      {spokenWord && (
+      {/* {spokenWord && (
         <div className="mt-2 text-sm text-gray-600">
           You said: "<em>{spokenWord}</em>"
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Phonic from "./Component/Phonic.jsx";
 import Body from "./Component/Body.jsx";
 import PronunciationPractice from "./Component/PronunciationPractice.jsx";
+import Activites from "./Component/Activities.jsx";
+import Alphabet from "./Component/Alphabet.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/pronunciation",
         element: <PronunciationPractice />,
+      },
+      {
+        path: "/alphabet",
+        element: <Alphabet />,
       },
     ],
   },

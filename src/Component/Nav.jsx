@@ -22,6 +22,13 @@ function Nav() {
           </Link>
 
           <Link
+            to="/alphabet"
+            className="hover:text-orange-400 transition text-xl font-mono"
+          >
+            ALPHABET
+          </Link>
+
+          <Link
             to="/phonics"
             className="hover:text-orange-400 transition text-xl font-mono"
           >
@@ -34,7 +41,7 @@ function Nav() {
           >
             PRONUNCIATION
           </Link>
-          <a
+          {/* <a
             href="https://www.youtube.com/@CordovaJoyfulLearning/videos"
             target="_blank"
             className="hover:text-orange-400 transition text-xl font-mono"
@@ -47,7 +54,7 @@ function Nav() {
             className="hover:text-orange-400 transition text-xl font-mono"
           >
             ABOUT US
-          </a>
+          </a> */}
         </div>
 
         {/* Right: Button */}
